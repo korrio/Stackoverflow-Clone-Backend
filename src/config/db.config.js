@@ -5,10 +5,15 @@ const config = require('./index');
 
 dotenv.config();
 
-const sequelize = new Sequelize(config.DB.DATABASE, config.DB.USER, config.DB.PASSWORD,
+console.log("5555555555");
+console.log(dotenv.config());
+console.log("6666666666:",config.DB.USER);
+console.log(process.env);
+
+const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD,
   {
     dialect: 'mysql',
-    host: config.DB.HOST,
+    host: process.env.HOST,
     define: {
       timestamps: false,
     },
